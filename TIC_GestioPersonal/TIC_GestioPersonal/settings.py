@@ -69,6 +69,10 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'centre/static'
+]
+
 WSGI_APPLICATION = 'TIC_GestioPersonal.wsgi.application'
 
 
