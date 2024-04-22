@@ -1,0 +1,26 @@
+{% include "head/header.html" %}
+<body>
+    <div class="table">
+        <h1 class="ms-4">INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
+        <table class="table table-striped w-75 ms-4">
+            <tr>
+                <th>ID</th>
+                <th>NOM</th>
+                <th>COGNOM</th>
+                <th>EDAT</th>
+                <th>ROL</th>
+                <th>CURS</th>
+            </tr>
+            {% for key, value in profs.items%}
+                <tr>
+                    <td>{{value.id}}</td>
+                    <td><a href="{% url 'teacher' value.id %}">{{value.name}}</a></td>
+                    <td>{{value.surname}}</td>
+                    <td>{{value.age}}</td>
+                    <td>{{value.rol}}</td>
+                    <td>{{value.course}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
