@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
+from .forms import PersonForm
 
 # Create your views here:
 def index(request):
@@ -90,3 +91,15 @@ def student_info(request, id):
         
     context = {'alum': alumne}
     return render(request, 'student_info.html', context)
+
+def user_form(request): 
+    form = PersonForm()
+    
+    if request.method == 'POST':
+        form = PersonForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+        
+    context = {'form': form}
+    return render(request, 'form.html', context)

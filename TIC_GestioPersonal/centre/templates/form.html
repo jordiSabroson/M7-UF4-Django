@@ -1,0 +1,22 @@
+{% include 'head/header.html' %}
+<body>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="m-3 w-50">
+      <h1>FORMULARI DE PROVA</h1>
+      <label for="nom" class="form-label">Nom</label>
+      <input type="text" class="form-control" name="nom" id="" />
+
+      <label for="cognom" class="form-label">Cognom</label>
+      <input type="text" class="form-control" name="cognom" id="" />
+
+      <label for="assignatures" class="form-label">Assignatures</label>
+      <input type="text" class="form-control" name="assignatures" id="" />
+
+      <label for="rol" class="form-label">Rol</label>
+      <input type="text" class="form-control" name="rol" id="" />
+      
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+  </form>
+</body>

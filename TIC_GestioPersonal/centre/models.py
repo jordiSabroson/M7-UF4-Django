@@ -7,3 +7,5 @@ class Person(models.Model):
     cognom = models.CharField(max_length=255)
     assignatures = models.CharField(max_length=255)
     rol = models.CharField(max_length=255)
+    class Meta:
+        app_label = 'centre'
