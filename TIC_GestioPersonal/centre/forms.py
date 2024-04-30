@@ -1,7 +1,8 @@
-from .models import Person
+from .models import Usuari, Rol
 from django.forms import ModelForm
 
-class PersonForm(ModelForm):
+
+class UsuariForm(ModelForm):
     class Meta:
-        model = Person
-        fields = '__all__'
+        model = Usuari
+        fields = "__all__"
