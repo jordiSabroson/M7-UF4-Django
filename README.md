@@ -1,20 +1,26 @@
 # DJANGO
 
-## PRÀCTICA 1 - VIEWS I TEMPLATES
+## PRÀCTICA 2 - BASE DE DADES/MODEL
 
-1. Crear un projecte de DJANGO de nom TIC_GestioPersonal.
-El nom de l’aplicació a on s’hi afegiran els templates i les views és centre.
-Es farà una aplicació per mostrar dades de l’alumnat de DAW2B i del seu professorat.
-Dades a mostrar alumnat: nom, cognom1, cognom2, correu, curs, mòduls matriculats.
-Dades a mostrar prof.: nom, cognom1, cognom2, correu, curs, tutor(si s’escau),mòduls que imparteix.
+**1. BASES DE DADES**
+   1. Trieu el tipus de bases de dades que vulgueu utilitzar en aquesta pràctica.
+   2. Haureu de crear una bases de dades amb el nom iticBCN
+   3. Haureu de crear mínim una taula
+      1. usuari: id, nom , cognom, assignatures, rol.
+      2. En el cas de ser professor haurem de saber les assignatures que està impartint.
+   4. Fer servir mínim una taula relacional per gestionar els rols i relacionar-ho amb la taula usuari. **(1 punt)**
+      1. Taula rol: id, nom.     Ex: 1, professor
+   
+**2. CRUD**
 
-   - Path alumne: localhost:8000/centre/students
-   - Path professor: localhost:8000/centre/teachers
+A partir de la pràctica anterior on feiem servir fakedata, haurem de fer els canvis necessaris per crear un CRUD de professors i estudiants que utilitzi  les bases de dades definida en l’apartat anterior.
 
-    Només la pàgina principal (del projecte) ha de renderitzar també un header. Aquest header sempre es mostrarà (independentment de si està mostrant dades de professorat o d’alumnat).
+Feu els canvis necessaris en l’aplicació per gestionar un crud per professors i alumnes:
+- READ (2 punts)
+- CREATE (3 punts)
+- UPDATE (3 PUNTS)
+- DELETE (1 PUNT)
 
-**Pàgina de centre/teachers:**
-![centre/teachers](TIC_GestioPersonal/centre/static/img/teachers.png)
+Cada vegada que es fa un create, update o delete les dades que apareixin a la vista després del CRUD estaran actualitzades.
 
-**Pàgina de centre/students:**
-![centre/students](TIC_GestioPersonal/centre/static/img/students.png)
+Les pàgines de formularis s’han de crear amb el forms.py (segons explicació diapositives de form)
