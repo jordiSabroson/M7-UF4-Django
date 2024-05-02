@@ -1,0 +1,11 @@
+{% include 'head/header.html' %}
+<body>
+  <div class="m-2">
+    <h1>Afegir usuari</h1>
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+</body>

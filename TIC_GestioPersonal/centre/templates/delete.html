@@ -1,0 +1,10 @@
+{% include "head/header.html" %}
+<body>
+    <div>
+        <h1>Segur que vols eliminar l'usuari {{ user.nom }}?</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Si</button>
+        </form>
+    </div>
+</body>
