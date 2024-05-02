@@ -1,26 +1,30 @@
-{% include "head/header.html" %}
+{% include 'head/header.html' %}
 <body>
-    <div class="table">
-        <h1 class="ms-4">INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
-        <table class="table table-striped w-75 ms-4">
-            <tr>
-                <th>ID</th>
-                <th>NOM</th>
-                <th>COGNOM</th>
-                <th>EDAT</th>
-                <th>ROL</th>
-                <th>CURS</th>
-            </tr>
-            {% for key, value in profs.items%}
-                <tr>
-                    <td>{{value.id}}</td>
-                    <td><a href="{% url 'teacher' value.id %}">{{value.name}}</a></td>
-                    <td>{{value.surname}}</td>
-                    <td>{{value.age}}</td>
-                    <td>{{value.rol}}</td>
-                    <td>{{value.course}}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
+  <div class="table">
+    <h1 class="ms-4">INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
+    <table class="table table-striped w-50 ms-4 text-center">
+      <tr>
+        <th>ID</th>
+        <th>NOM</th>
+        <th>COGNOM</th>
+        <th>ID ASSIGNATURA</th>
+        <th>EDITAR</th>
+        <th>ELIMINAR</th>
+      </tr>
+      {% for teacher in teachers %}
+        <tr>
+          <td>{{ teacher.id }}</td>
+          <td>{{ teacher.nom }}</td>
+          <td>{{ teacher.cognom }}</td>
+          <td>{{ teacher.assignatures_id }}</td>
+          <td>
+            <a href="{% url 'update' teacher.id %}"><i class="bi bi-pen-fill"></i></a>
+          </td>
+          <td>
+            <a href="{% url 'delete' teacher.id %}"><i class="bi bi-trash-fill"></i></a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
 </body>

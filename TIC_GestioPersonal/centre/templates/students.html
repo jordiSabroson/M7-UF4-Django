@@ -1,20 +1,28 @@
-{% include "head/header.html" %}
+{% include 'head/header.html' %}
 <body>
-    <div class="table mx-4">
-        <h1>INFORMACIÓ ALUMNAT TIC BARCELONA (aplicació centre)</h1>
-        <table class="table table-striped w-50">
-            <tr>
-                <th>ID</th>
-                <th>NOM</th>
-                <th>ROL</th>
-            </tr>
-            {% for key, value in alums.items%}
-                <tr>
-                    <td>{{value.id}}</td>
-                    <td><a href="{% url 'student' value.id %}">{{value.name}}</a></td>
-                    <td>{{value.rol}}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
+  <div class="table mx-4">
+    <h1>INFORMACIÓ ALUMNAT TIC BARCELONA (aplicació centre)</h1>
+    <table class="table table-striped w-50 text-center">
+      <tr>
+        <th>ID</th>
+        <th>NOM</th>
+        <th>COGNOM</th>
+        <th>EDITAR</th>
+        <th>ELIMINAR</th>
+      </tr>
+      {% for student in students %}
+        <tr>
+          <td>{{ student.id }}</td>
+          <td>{{ student.nom }}</td>
+          <td>{{ student.cognom }}</td>
+          <td>
+            <a href="{% url 'update' student.id %}"><i class="bi bi-pen-fill"></i></a>
+          </td>
+          <td>
+            <a href="{% url "delete" student.id %}"><i class="bi bi-trash-fill"></i></a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
 </body>
